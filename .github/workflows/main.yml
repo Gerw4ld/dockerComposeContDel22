@@ -4,14 +4,15 @@ on: [push]
 jobs:
   build:
   runs-on: ubuntu-latest
-steps:
-  - uses: actions/checkout@v3
-  - name: Docker Compose Action
-    uses: isbang/compose-action@v1.4.1
-    with:
-      compose-file: "./docker-compose/docker-compose.yml"
-      down-flags: "--volumes"
-      services: |
-        database-server
-        cache-server
-        api
+
+  steps:
+   - uses: actions/checkout@v3
+   - name: Docker Compose Action
+     uses: isbang/compose-action@v1.4.1
+      with:
+        compose-file: "./docker-compose/docker-compose.yml"
+        down-flags: "--volumes"
+        services: |
+         database-server
+         cache-server
+         api
