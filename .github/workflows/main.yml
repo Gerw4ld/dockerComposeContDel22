@@ -5,9 +5,13 @@ jobs:
   build:
   runs-on: ubuntu-latest
 steps:
+  - name: Docker Compose Action
   - uses: actions/checkout@v3
   - uses: isbang/compose-action@v1.4.1
     with:
-      compose-file: "./docker-compose/docker-compose.yml"
-    env:
-      CUSTOM_VARIABLE: "test"
+      compose-file: "./docker.compose/docker-compose.yml"
+      down-flags: "--volumes"
+      services: |
+        database-server
+        cache-server
+        api
