@@ -1,2 +1,9 @@
-- name: Docker Compose Action
-  uses: isbang/compose-action@v1.4.1
+name: Docker Compose Exercise
+run-name: ${{ github.actor }} run 3 containers
+on: [push]
+jobs:
+  build:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Docker Compose Action
+      uses: isbang/compose-action@v1.4.1
