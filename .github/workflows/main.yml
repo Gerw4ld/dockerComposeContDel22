@@ -2,7 +2,6 @@ name: Docker Compose Exercise
 run-name: ${{ github.actor }} run 3 containers at same time
 on: [push]
 jobs:
-  build:
   runs-on: ubuntu-latest
 
   steps:
